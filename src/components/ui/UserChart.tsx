@@ -66,7 +66,7 @@ const options = {
 export default function UserChart() {
   return (
     <div className="bg-[#3A3D4E] p-4 rounded-3xl">
-             <h3 className="text-white font-semibold pb-4">User Activity Overview</h3>
+      <h3 className="text-white font-semibold pb-4">User Activity Overview</h3>
 
       <div className="w-full h-auto min-h-[250px]  aspect-[16/9]">
         <Bar data={data} options={options} />

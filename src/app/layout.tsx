@@ -19,7 +19,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <body className="relative">
         {loading && <Loader />} 
-        <div className="md:flex p-7 gap-7 min-h-screen bg-gray-100 dark:bg-gray-900 ">
+        <div className="md:flex p-7 gap-7 min-h-screen bg-gray-900 ">
           <Sidebar />
           <div className="flex-1 flex flex-col">
             <main>{children}</main>

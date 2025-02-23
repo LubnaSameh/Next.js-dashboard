@@ -73,7 +73,7 @@ const AnalyticsChart = () => {
   };
 
   return (
-    <div className="w-full h-64 flex flex-col">
+    <div className=" h-full flex flex-col">
       <div className="mb-4">
         <h3 className="text-white text-xl font-semibold">Sales overview</h3>
         <p className="text-gray-400 text-sm">

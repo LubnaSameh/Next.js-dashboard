@@ -1,8 +1,8 @@
 import { Bar } from "react-chartjs-2";
 import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend } from "chart.js";
-import { Users, MousePointerClick, ShoppingCart, Package } from "lucide-react"; // ✅ أيقونات lucide-react
+import { Users, MousePointerClick, ShoppingCart, Package } from "lucide-react";
 
-// تسجيل العناصر المطلوبة
+// ✅ تسجيل العناصر المطلوبة
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 
 const CustomerActivity = () => {
@@ -27,7 +27,7 @@ const CustomerActivity = () => {
 
   const options = {
     responsive: true,
-    maintainAspectRatio: false,
+    maintainAspectRatio: false, // ✅ يجعل المخطط يأخذ كل الارتفاع
     plugins: {
       legend: { display: false },
     },
@@ -44,15 +44,18 @@ const CustomerActivity = () => {
   };
 
   return (
-    <div className="text-white w-full ">
+    <div className="text-white w-full flex flex-col h-full">
+      
+      {/* ✅ العنوان + البيانات */}
       <div className="flex flex-col sm:flex-row justify-between items-start">
         <h2 className="text-lg font-semibold">Active Users</h2>
         <p className="text-sm text-green-400 mt-2 sm:mt-0">(+23) than last week</p>
       </div>
 
+      {/* ✅ بيانات المستخدمين */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-4">
         {stats.map((stat, index) => (
-          <div key={index} className="flex flex-col items-center ">
+          <div key={index} className="flex flex-col items-center">
             <div className="flex items-center gap-2">
               {stat.icon}
               <span className="text-sm">{stat.label}</span>
@@ -61,9 +64,12 @@ const CustomerActivity = () => {
           </div>
         ))}
       </div>
-      <div className=" min-h-[150px] mt-4 overflow-x-auto">
+
+      {/* ✅ المخطط يأخذ كل الارتفاع المتاح */}
+      <div className="flex-1 min-h-[200px] mt-4">
         <Bar data={data} options={options} />
       </div>
+      
     </div>
   );
 };
